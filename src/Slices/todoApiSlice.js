@@ -4,34 +4,34 @@ export const todoApiSlice = apiSlice.injectEndpoints({
     endpoints: (build) => ({
         getTodos: build.query({
             query: ({ userId }) => ({
-                url: `/todo/getTodos`,
+                url: `/api/todo/getTodos`,
                 params: { userId }
             })
         }),
         getTodo: build.query({
             query: (id) => ({
-                url: '/todo/getTodoById',
+                url: '/api/todo/getTodoById',
                 method: 'GET',
                 params: { id }
             })
         }),
         addTodo: build.mutation({
             query: (data) => ({
-                url: `/todo/createTodo`,
+                url: `/api/todo/createTodo`,
                 method: 'POST',
                 body: data
             })
         }),
         updateTodo: build.mutation({
             query: (data) => ({
-                url: '/todo/updateTodo',
+                url: '/api/todo/updateTodo',
                 method: 'PATCH',
                 body: data
             })
         }),
         deleteTodo: build.mutation({
             query: (id) => ({
-                url: `/todo/${id}`,  // Expecting just the ID
+                url: `/api/todo/${id}`,  // Expecting just the ID
                 method: 'DELETE',
             }),
         })
@@ -44,4 +44,4 @@ export const {
     useGetTodoQuery,
     useUpdateTodoMutation,
     useDeleteTodoMutation,
-} = todoApiS
+} = todoApiSlice
