@@ -5,7 +5,7 @@ const userApiSlice = apiSlice.injectEndpoints({
         
         userLogin: builder.mutation({
             query: (data)=>({
-                url: '/api/users',
+                url: '/users',
                 method: 'POST',
                 body: data
             }),
@@ -13,14 +13,14 @@ const userApiSlice = apiSlice.injectEndpoints({
         
         registerUser: builder.mutation({
             query: (data)=>({
-                url: '/api/users/register',
+                url: '/users/register',
                 method: 'POST',
                 body: data
             }),
         }),
         userLogout: builder.mutation({
             query: () =>({
-                url: '/api/users/logout',
+                url: '/users/logout',
                 method: 'GET'
             }),
         })
@@ -34,3 +34,41 @@ export const {
 } = userApiSlice
 
 export default userApiSlice;
+
+
+// import { apiSlice } from "./apiSlices"
+
+// const userApiSlice = apiSlice.injectEndpoints({
+//     endpoints: (builder) => ({
+        
+//         userLogin: builder.mutation({
+//             query: (data)=>({
+//                 url: '/api/users',
+//                 method: 'POST',
+//                 body: data
+//             }),
+//         }),
+        
+//         registerUser: builder.mutation({
+//             query: (data)=>({
+//                 url: '/api/users/register',
+//                 method: 'POST',
+//                 body: data
+//             }),
+//         }),
+//         userLogout: builder.mutation({
+//             query: () =>({
+//                 url: '/api/users/logout',
+//                 method: 'GET'
+//             }),
+//         })
+//     })
+// }) 
+
+// export const {
+//     useUserLoginMutation,
+//     useRegisterUserMutation,
+//     useUserLogoutMutation
+// } = userApiSlice
+
+// export default userApiSlice;
