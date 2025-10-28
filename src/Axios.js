@@ -1,9 +1,13 @@
 import axios from 'axios'
 
+const API_BASE_URL =
+  import.meta.env.VITE_API_URL ||
+  "https://mern-todo-backend.up.railway.app";
+
 const Todoinstance = axios.create({
-  baseURL: import.meta.env.VITE_API_URL + "/api/todo",
-  timeout: 5000,
-  headers: { 'X-Custom-Header': 'foobar' }
+  baseURL: `${API_BASE_URL}/api/todo`,
+  withCredentials: true, // important for cookies / auth
+  timeout: 10000,
 });
 
 export default Todoinstance
